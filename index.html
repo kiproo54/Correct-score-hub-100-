@@ -3,217 +3,173 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Correct Score Hub</title>
+    <title>Correct Score Pro</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet" />
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: Arial, sans-serif;
+        font-family: "Roboto", sans-serif;
       }
 
       body {
-        background-color: #ffffff;
-        color: #222;
-        line-height: 1.6;
-      }
-
-      /* Playstore badge top */
-      .download-top {
-        text-align: center;
-        margin: 15px 0;
-      }
-
-      .download-top a img {
-        width: 220px;
-        max-width: 80%;
-        transition: transform 0.3s;
-      }
-
-      .download-top a img:hover {
-        transform: scale(1.05);
+        background: #f5f5f5;
+        color: #1e1c1c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        padding: 20px;
       }
 
       header {
         text-align: center;
-        padding: 30px 20px 20px;
-        background: #f8f8f8;
-        border-bottom: 1px solid #ddd;
-      }
-
-      header .logo {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: #2a2a2a;
+        margin-top: 50px;
       }
 
       header h1 {
-        font-size: 2rem;
-        margin-bottom: 10px;
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: #1e1c1c;
       }
 
       header p {
-        font-size: 1rem;
-        color: #555;
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 0 10px;
-      }
-
-      section {
-        max-width: 1000px;
-        margin: 40px auto;
-        padding: 0 20px;
-      }
-
-      section h2 {
-        font-size: 1.6rem;
-        margin-bottom: 20px;
-        text-align: center;
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto 40px auto;
+        line-height: 1.6;
         color: #333;
       }
 
-      .features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
+      .playstore-btn {
+        display: inline-flex;
+        align-items: center;
+        background-color: transparent;
+        color: #1e1c1c;
+        border: 2px solid #1e1c1c;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
 
-      .feature-card {
-        background: #f9f9f9;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      .playstore-btn:hover {
+        background-color: #1e1c1c;
+        color: white;
+      }
+
+      .playstore-btn img {
+        height: 36px; /* bigger icon */
+        margin-right: 12px;
+      }
+
+      section.features {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        width: 100%;
+        max-width: 1000px;
+      }
+
+      .feature {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
         text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
-      .feature-card h3 {
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-        color: #2a2a2a;
+      .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
       }
 
-      .feature-card p {
-        font-size: 0.95rem;
+      .feature h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+
+      .feature p {
         color: #555;
+        font-size: 1rem;
+        line-height: 1.5;
       }
 
       footer {
+        margin-top: 80px;
         text-align: center;
-        padding: 20px;
-        margin-top: 40px;
-        background: #f8f8f8;
-        border-top: 1px solid #ddd;
+        color: #888;
         font-size: 0.9rem;
-        color: #666;
       }
 
-      /* Mobile responsiveness */
       @media (max-width: 768px) {
-        header .logo {
-          font-size: 1.6rem;
-        }
         header h1 {
-          font-size: 1.5rem;
+          font-size: 2.2rem;
         }
-        header p {
-          font-size: 0.95rem;
-        }
-        section h2 {
-          font-size: 1.3rem;
-        }
-        .feature-card {
-          padding: 15px;
-        }
-        .feature-card h3 {
-          font-size: 1.1rem;
-        }
-        .feature-card p {
-          font-size: 0.9rem;
-        }
-      }
 
-      @media (max-width: 480px) {
-        .download-top a img {
-          width: 180px;
+        .feature {
+          padding: 20px;
         }
-        header .logo {
-          font-size: 1.4rem;
-        }
-        header h1 {
-          font-size: 1.3rem;
-        }
-        header p {
-          font-size: 0.9rem;
-        }
-        section {
-          margin: 25px auto;
-          padding: 0 15px;
+
+        .playstore-btn img {
+          height: 28px;
         }
       }
     </style>
   </head>
   <body>
-    <!-- PLAYSTORE LINK ON TOP -->
-    <div class="download-top">
+    <header>
+      <h1>Correct Score Pro</h1>
+      <p>
+        Get accurate VIP correct scores, multiple betting options, and stay
+        ahead with daily match predictions. Download now and elevate your
+        betting experience!
+      </p>
       <a
-        href="https://play.google.com/store/apps/details?id=correctscore.hub"
+        class="playstore-btn"
+        href="https://play.google.com/store/apps/details?id=correct.score210"
         target="_blank">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-          alt="Get it on Google Play" />
+          alt="Play Store" />
+        Download on Play Store
       </a>
-    </div>
-
-    <!-- HEADER -->
-    <header>
-      <div class="logo">⚽ Correct Score Hub</div>
-      <h1>Welcome to Correct Score Hub</h1>
-      <p>
-        We offer <strong>VIP Correct Scores</strong>,
-        <strong>different betting options</strong>, and many more features to
-        boost your game insights.
-      </p>
     </header>
 
-    <!-- ABOUT SECTION -->
-    <section>
-      <h2>About the App</h2>
-      <p style="text-align: center; max-width: 700px; margin: 0 auto">
-        Correct Score Hub provides you with daily football predictions and
-        exclusive VIP content. Our team of experts analyzes games worldwide to
-        deliver tips, results, and performance statistics — giving you the edge
-        you need.
-      </p>
-    </section>
-
-    <!-- FEATURES SECTION -->
-    <section>
-      <h2>Key Features</h2>
-      <div class="features">
-        <div class="feature-card">
-          <h3>✔ VIP Correct Scores</h3>
-          <p>
-            Exclusive correct score predictions available for our VIP users.
-          </p>
-        </div>
-        <div class="feature-card">
-          <h3>📊 Betting Options</h3>
-          <p>Wide range of betting tips: 1X2, Over/Under, GG/NG, and more.</p>
-        </div>
-        <div class="feature-card">
-          <h3>🌍 Worldwide Coverage</h3>
-          <p>Get predictions for top leagues and lesser-known competitions.</p>
-        </div>
-        <div class="feature-card">
-          <h3>🔔 Real-time Alerts</h3>
-          <p>Stay notified when new predictions and results are published.</p>
-        </div>
+    <section class="features">
+      <div class="feature">
+        <h2>Daily VIP Scores</h2>
+        <p>
+          Receive the most accurate predictions every day to maximize your
+          winning chances.
+        </p>
+      </div>
+      <div class="feature">
+        <h2>Multiple Betting Options</h2>
+        <p>
+          Choose from a variety of betting options including accumulators,
+          singles, and more.
+        </p>
+      </div>
+      <div class="feature">
+        <h2>User-Friendly Interface</h2>
+        <p>
+          Navigate easily through our clean interface and access scores quickly
+          on any device.
+        </p>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>&copy; 2025 Correct Score Hub. All rights reserved.</footer>
+    <footer>&copy; 2025 Correct Score Pro. All rights reserved.</footer>
   </body>
 </html>
